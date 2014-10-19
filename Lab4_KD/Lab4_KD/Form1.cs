@@ -33,8 +33,6 @@ namespace Lab4_KD
         public Form1()
         {
             InitializeComponent();
-            //Hint color 
-            int colorNumb;
             // Title
             this.Text = @"Eight Queens by Kanav Dhir";
 
