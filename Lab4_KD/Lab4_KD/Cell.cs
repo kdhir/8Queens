@@ -36,12 +36,12 @@ namespace Lab4_KD
             if (currColor == 0)
             {
                 this.color = Brushes.White;
-                queenColor = Brushes.Black;
+                this.queenColor = Brushes.Black;
             }
             else
             {
                 this.color = Brushes.Black;
-                queenColor = Brushes.White;
+                this.queenColor = Brushes.White;
             }
 
             // Set row and column

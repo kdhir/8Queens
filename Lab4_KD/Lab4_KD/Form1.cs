@@ -25,6 +25,9 @@ namespace Lab4_KD
         
         // Flag for Hints (default false)
         private bool hintsEnabled = false;
+
+        // Count Queens
+        public int numberOfQueens;
        
 
         public Form1()
@@ -35,7 +38,7 @@ namespace Lab4_KD
             this.Text = @"Eight Queens by Kanav Dhir";
 
             // number of queens text
-            label1.Text = String.Format("You have __ queens on the board");
+            label1.Text = String.Format("You have {0} queens on the board",numberOfQueens);
 
             // Create cells on board
             for (int col = 0; col < (BOARDSIZE / CELLSIZE); col++)
@@ -57,20 +60,55 @@ namespace Lab4_KD
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            foreach (Cell currCell in boardCells)
+            foreach (Cell c in boardCells)
             {
                 // Fill each cell's rectangle first
-                g.FillRectangle(currCell.color, currCell.rect);
+                g.FillRectangle(c.color, c.rect);
                 // Then create a boarder around the board
-                g.DrawRectangle(Pens.Black, currCell.rect);
-
+                g.DrawRectangle(Pens.Black, c.rect);
+                
+                Font queenFont = new Font("Arial", 30, FontStyle.Bold);
+                
                 //Drawing Queens
-                if (currCell.hasQueen == true)
+                if (c.hasQueen == true)
                 {
-                    Font queenFont = new Font("Arial",30,FontStyle.Bold);
-                    g.DrawString("Q", queenFont, currCell.queenColor, currCell.rect.Location);
+                    g.DrawString("Q", queenFont, c.queenColor, c.rect.Location);
                 }
             }
         }
+
+        private void Form1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                // Click Point
+                foreach (Cell c in this.boardCells){
+                    int xRange = c.rect.X + 50;
+                    int yRange = c.rect.Y + 50;
+                    // if click is in this cell
+                    if (((c.rect.X < e.X) && (e.X < xRange)) && ((c.rect.Y < e.Y) && (e.Y < yRange)))
+                    {
+                        if (c.isSafe == true)
+                        {
+                            c.hasQueen = true;
+                            c.isSafe = false;
+
+                            // update number of queens
+                            numberOfQueens++;
+                            label1.Text = String.Format("You have {0} queens on the board", numberOfQueens);
+
+                        }
+                        else
+                        {
+                            //Beep sound
+                            System.Media.SystemSounds.Beep.Play();
+                        }
+
+                    }
+                }
+                this.Invalidate();
+            }
+        }
+
     }
 }
