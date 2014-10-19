@@ -16,8 +16,12 @@ namespace Lab4_KD
         // Cell Color
         public Brush color;
 
-        // Flag for wheather the cell is safe or not (default true)
-        public bool safe = true;
+        // Flag to see if the cell is safe or not (default true)
+        public bool isSafe = true;
+
+        // Managing Queen Stuff
+        public bool hasQueen = false;
+        public Brush queenColor;
 
         // Rect to represent each cell (x,y,width,height)
         public Rectangle rect;
@@ -32,10 +36,12 @@ namespace Lab4_KD
             if (currColor == 0)
             {
                 this.color = Brushes.White;
+                queenColor = Brushes.Black;
             }
             else
             {
                 this.color = Brushes.Black;
+                queenColor = Brushes.White;
             }
 
             // Set row and column

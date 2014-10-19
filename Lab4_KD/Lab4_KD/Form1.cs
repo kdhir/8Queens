@@ -24,12 +24,19 @@ namespace Lab4_KD
         // List of queens on board
         
         // Flag for Hints (default false)
-        public bool hintsEnabled = false;
+        private bool hintsEnabled = false;
        
 
         public Form1()
         {
             InitializeComponent();
+
+            // Title
+            this.Text = @"Eight Queens by Kanav Dhir";
+
+            // number of queens text
+            label1.Text = String.Format("You have __ queens on the board");
+
             // Create cells on board
             for (int col = 0; col < (BOARDSIZE / CELLSIZE); col++)
             {
@@ -56,6 +63,13 @@ namespace Lab4_KD
                 g.FillRectangle(currCell.color, currCell.rect);
                 // Then create a boarder around the board
                 g.DrawRectangle(Pens.Black, currCell.rect);
+
+                //Drawing Queens
+                if (currCell.hasQueen == true)
+                {
+                    Font queenFont = new Font("Arial",30,FontStyle.Bold);
+                    g.DrawString("Q", queenFont, currCell.queenColor, currCell.rect.Location);
+                }
             }
         }
     }
