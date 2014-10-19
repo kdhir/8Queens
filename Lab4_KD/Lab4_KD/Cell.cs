@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Lab4_KD
 {
-    class Cell
+    public class Cell
     {
         // Row and Column values for each Cell
         public int row;
@@ -23,13 +23,20 @@ namespace Lab4_KD
         public Rectangle rect;
 
         //Default Constructor
-        public Cell(Rectangle currRect, int currRow, int currCol, Brush currColor)
+        public Cell(Rectangle currRect, int currRow, int currCol, int currColor)
         {
             // Set cell's rect
             this.rect = currRect;
 
             // Set cell color
-            this.color = currColor;
+            if (currColor == 0)
+            {
+                this.color = Brushes.White;
+            }
+            else
+            {
+                this.color = Brushes.Black;
+            }
 
             // Set row and column
             this.row = currRow;

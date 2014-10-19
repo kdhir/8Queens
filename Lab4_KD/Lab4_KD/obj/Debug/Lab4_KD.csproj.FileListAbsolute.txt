@@ -1,1 +1,9 @@
 C:\Users\Kanav\Desktop\EC447\8Queens\Lab4_KD\Lab4_KD\bin\Debug\Lab4_KD.exe.config
+C:\Users\Kanav\Desktop\EC447\8Queens\Lab4_KD\Lab4_KD\obj\Debug\Lab4_KD.csprojResolveAssemblyReference.cache
+C:\Users\Kanav\Desktop\EC447\8Queens\Lab4_KD\Lab4_KD\obj\Debug\Lab4_KD.Form1.resources
+C:\Users\Kanav\Desktop\EC447\8Queens\Lab4_KD\Lab4_KD\obj\Debug\Lab4_KD.Properties.Resources.resources
+C:\Users\Kanav\Desktop\EC447\8Queens\Lab4_KD\Lab4_KD\obj\Debug\Lab4_KD.csproj.GenerateResource.Cache
+C:\Users\Kanav\Desktop\EC447\8Queens\Lab4_KD\Lab4_KD\bin\Debug\Lab4_KD.exe
+C:\Users\Kanav\Desktop\EC447\8Queens\Lab4_KD\Lab4_KD\bin\Debug\Lab4_KD.pdb
+C:\Users\Kanav\Desktop\EC447\8Queens\Lab4_KD\Lab4_KD\obj\Debug\Lab4_KD.exe
+C:\Users\Kanav\Desktop\EC447\8Queens\Lab4_KD\Lab4_KD\obj\Debug\Lab4_KD.pdb
