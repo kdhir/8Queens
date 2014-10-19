@@ -38,7 +38,7 @@ namespace Lab4_KD
                 this.color = Brushes.White;
                 this.queenColor = Brushes.Black;
             }
-            else
+            else if(currColor == 1)
             {
                 this.color = Brushes.Black;
                 this.queenColor = Brushes.White;
